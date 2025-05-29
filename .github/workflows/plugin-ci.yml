@@ -13,9 +13,6 @@ jobs:
       - name: Say Hello
         run: echo "Hello from GitHub Actions!" 
 
-      - name: Install dependencies
-        run: composer install
-
       - name: Run PHPUnit tests
         run: vendor/bin/phpunit
 
