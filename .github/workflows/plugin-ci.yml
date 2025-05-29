@@ -22,7 +22,7 @@ jobs:
         run: composer install
 
       - name: Run PHPUnit tests
-        run: vendor/bin/phpunit
+        run: php vendor/bin/phpunit
 
       - name: Validate PHP syntax
         run: find . -name "*.php" -exec php -l {} \;
