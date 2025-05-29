@@ -8,6 +8,6 @@ Author: siraj shaikh
 
 require_once plugin_dir_path(__FILE__) . 'includes/class-my-simple-custom-plugin.php';
 
-/* test Call */
+/* test Call 2 */
 My_Simple_Plugin::init();
 
