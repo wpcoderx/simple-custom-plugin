@@ -3,13 +3,16 @@ name: WordPress Plugin CI/CD
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   test-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Say Hello
+        run: echo "Hello from GitHub Actions!" 
+
       - name: Install dependencies
         run: composer install
 
@@ -33,4 +36,4 @@ jobs:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASS }}
-          server-dir: /public_html/wp-content/plugins/simple-custom-plugin/
+          server-dir: /wp-content/plugins/simple-custom-plugin/
