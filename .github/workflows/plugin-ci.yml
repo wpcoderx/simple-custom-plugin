@@ -10,15 +10,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Say Hello
-        run: echo "Hello from GitHub Actions!" 
-
-      - name: Install dependencies
-        run: composer install
-
-      - name: Run PHPUnit tests
-        run: vendor/bin/phpunit
-
       - name: Checkout Code
         uses: actions/checkout@v3
 
@@ -26,6 +17,12 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.1'
+
+      - name: Install dependencies
+        run: composer install
+
+      - name: Run PHPUnit tests
+        run: vendor/bin/phpunit
 
       - name: Validate PHP syntax
         run: find . -name "*.php" -exec php -l {} \;
